@@ -52,3 +52,11 @@ class MetaInformation:
         except (AttributeError, TypeError, ValueError) as e:
             logger.error("Error in get related modules for %s: %s", entity, e)
             return []
+
+    def get_filter_fields(self, entity):
+        try:
+            info = self.ws.do_describe(entity)
+            return list(info["filterFields"]["fields"])
+        except (AttributeError, TypeError, ValueError) as e:
+            logger.error("Error in get filter fields for %s: %s", entity, e)
+            return []
