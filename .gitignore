@@ -1,6 +1,10 @@
 **.DS_Store
 .dccache
 /cache
+/**/__pycache__
+/**/.venv
+/**/.env
+/**/*.log
 /.vscode
 /.scannerwork
 /node_modules

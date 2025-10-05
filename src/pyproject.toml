@@ -1,0 +1,12 @@
+[project]
+name = "evolutivomcp"
+version = "1.0.0"
+description = "MCP servers for interactions with Evolutivo.FW"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.16.0",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.5",
+]
