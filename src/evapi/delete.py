@@ -12,5 +12,5 @@ class Delete:
             record = self.ws.do_delete(wsid)
             return record
         except (AttributeError, TypeError, ValueError) as e:
-            logger.error("Error in get entity (%s): %s", wsid, e)
+            logger.error("Error in delete entity (%s): %s", wsid, e)
             return []

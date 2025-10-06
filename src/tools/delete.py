@@ -5,11 +5,11 @@ def register(mcp: FastMCP):
     @mcp.tool()
     async def delete_record(wsid: str):
         """
-        Retrieve the values of the fields available for a record in your Evolutivo Application.
+        Delete a record from an entity in your Evolutivo Application.
         Args:
-            wsid (str): The WSID of the record to retrieve.
+            wsid (str): The WSID of the record to delete.
         Returns:
-            array: field values for the record identifier.
+            array: succes or error message.
         """
         conn = Delete()
         return conn.do_delete(wsid)
