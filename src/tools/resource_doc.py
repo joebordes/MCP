@@ -11,7 +11,7 @@ import os
 def register(mcp: FastMCP):
 
     @mcp.resource("resource://{wsid}")
-    def get_file(wsid: str) -> str:
+    def get_file_resource(wsid: str) -> FileResource:
         """
         Retrieve data from a document saved in Evolutivo.FW.
 
@@ -61,4 +61,15 @@ def register(mcp: FastMCP):
             logger.error("Error decoding API file: %s", e)
             raise
 
+    @mcp.tool()
+    def get_file(wsid: str) -> FileResource:
+        """
+        Retrieve data from a document saved in Evolutivo.FW.
 
+        Args:
+            wsid (str): internal ID of the document (e.g., '12x34567')
+
+        Returns:
+            stream of bytes: contents of the document
+        """
+        return get_file_resource(wsid)
