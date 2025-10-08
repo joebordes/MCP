@@ -63,8 +63,8 @@ class MetaInformation:
 
     def get_filter_fields(self, entity):
         try:
-            info = self.ws.do_describe(entity)
-            return list(info["filterFields"]["fields"])
+            info = self.ws.do_invoke('getfilterfields', {"module":entity})
+            return list(info["fields"])
         except (AttributeError, TypeError, ValueError) as e:
             logger.error("Error in get filter fields for %s: %s", entity, e)
             return []
