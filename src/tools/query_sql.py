@@ -31,6 +31,6 @@ def register(mcp: FastMCP):
             select, object_name, where, order_by, limit
         )
         if vtql.startswith("Error:"):
-            return "Error: query structure is invalid: " + vtql
+            return "Query structure is invalid: " + vtql
 
         return query.get_records(vtql)
