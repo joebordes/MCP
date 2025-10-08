@@ -8,8 +8,8 @@ load_dotenv()
 
 class EVConnect:
     EVAPI_URL = os.getenv("EVAPI_URL", "")
-    EVAPI_USER = os.getenv("EVAPI_USER", "admin")
-    EVAPI_PASS = os.getenv("EVAPI_PASS", "4qBtQX8s8RMqBgJQ")
+    EVAPI_USER = os.getenv("EVAPI_USER", "")
+    EVAPI_PASS = os.getenv("EVAPI_PASS", "")
 
     def __init__(self):
         self.conn = None
