@@ -15,6 +15,14 @@ class MetaInformation:
             logger.error("Error in get entities: %s", e)
             return []
 
+    def get_entity_name_from_id(self, wsid: str) -> str:
+        try:
+            info = self.ws.do_invoke('getEntityNameFromID', {"entityid":wsid}, "GET")
+            return info
+        except (AttributeError, TypeError, ValueError) as e:
+            logger.error("Error in get entity name from id %s: %s", wsid, e)
+            return ''
+
     def get_fields(self, entity):
         try:
             info = self.ws.do_describe(entity)
